@@ -11,23 +11,51 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <title>Dailied</title>
+    <script>
+      (function () {
+        var lightBackground = '#E9E1CF';
+        var darkBackground = '#211E1A';
+        var themeMode = 'system';
+
+        try {
+          var storedTheme = window.localStorage.getItem('dailied.themeMode');
+          if (storedTheme === 'light' || storedTheme === 'dark' || storedTheme === 'system') {
+            themeMode = storedTheme;
+          }
+        } catch (error) {
+          themeMode = 'system';
+        }
+
+        var systemIsDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var themeIsDark = themeMode === 'dark' || (themeMode === 'system' && systemIsDark);
+        var launchBackground = themeIsDark ? darkBackground : lightBackground;
+
+        document.documentElement.style.setProperty('--dailied-launch-background', launchBackground);
+        document.documentElement.style.colorScheme = themeIsDark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', launchBackground);
+      })();
+    </script>
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
     <style id="expo-reset">
+      :root {
+        --dailied-launch-background: #e9e1cf;
+      }
       /* These styles make the body full-height */
       html,
       body {
         height: 100%;
+        background: var(--dailied-launch-background);
       }
       /* These styles disable body scrolling if you are using <ScrollView> */
       body {
         overflow: hidden;
-        background: #e9e1cf;
       }
       /* These styles make the root element full-height */
       #root {
         display: flex;
         height: 100%;
         flex: 1;
+        background: var(--dailied-launch-background);
       }
     </style>
   <link rel="icon" href="/Dailied/favicon.ico"/></head>
@@ -39,6 +67,6 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="/Dailied/_expo/static/js/web/index-88d073e00803708da5af47be6b6aaec4.js" defer></script>
+  <script src="/Dailied/_expo/static/js/web/index-843a448b5865934d22aad26d2a99f58f.js" defer></script>
 </body>
 </html>
