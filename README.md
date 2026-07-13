@@ -1,6 +1,6 @@
 # Dailied
 
-**Dailied** is a free mobile app that gives you and your friends the same three random real-life tasks every day. Complete your dailies, build a streak, earn points, help friends with gifts, and rank up.
+**Dailied** is a free mobile app that gives you three random real-life tasks every day. Complete your dailies, build a streak, earn points, help friends with gifts, and rank up.
 
 **Website:** https://cinder7832.github.io/Dailied/
 
