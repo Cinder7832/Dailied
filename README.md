@@ -22,9 +22,20 @@
 - Earn the points shown on each task you complete
 - Build a streak by completing at least one daily each day
 - Receive a streak bonus of 1% per previous streak day, up to a 25% bonus
+- Help defeat **Craig**, the shared weekly boss, because every task-earned point also deals one damage
 - Earn a **streak save** after every seven real completion days in an unbroken streak
 - Use streak saves to protect missed days and keep your visible streak and score multiplier
 - Choose whether to use saves or reset your streak when recovery is needed
+
+### Weekly Craig boss
+
+- Take on a cooperative boss shared by every registered player
+- Craig starts each Europe/London week with 1,000 HP
+- Task-earned points damage Craig without spending or reserving your score
+- Streak bonuses count as damage, while gifts and admin score adjustments do not
+- Undoing a completion restores Craig's HP and can revive him
+- See Craig's remaining HP, group damage, and reset countdown from Tasks
+- Get a one-time in-app result popup when Craig is defeated or survives the previous week
 
 ### History & ranks
 
@@ -73,6 +84,7 @@
 - Create reusable tasks with descriptions and custom point values
 - Search, edit, enable, disable, or remove unused tasks from the task library
 - Dailied automatically selects three active tasks for everyone each day
+- Change Craig's maximum HP for the current UK week while keeping existing group damage
 - Reset a player's Dailied score, streak, and history when required
 
 ---
