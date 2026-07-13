@@ -1,0 +1,31 @@
+{
+  "name": "Dailied",
+  "short_name": "Dailied",
+  "description": "A quiet shared daily challenge app for friends.",
+  "start_url": "/Dailied/",
+  "scope": "/Dailied/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#E9E1CF",
+  "theme_color": "#E9E1CF",
+  "icons": [
+    {
+      "src": "pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
