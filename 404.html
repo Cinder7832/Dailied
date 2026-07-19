@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     <meta name="theme-color" content="#E9E1CF" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Dailied" />
@@ -16,6 +16,17 @@
         var lightBackground = '#E9E1CF';
         var darkBackground = '#211E1A';
         var themeMode = 'system';
+        var activityParams = new URLSearchParams(window.location.search);
+        var isDiscordActivity = activityParams.get('discord_activity') === '1'
+          || activityParams.has('frame_id')
+          || activityParams.has('instance_id')
+          || activityParams.has('platform')
+          || activityParams.has('location_id')
+          || window.location.hash.indexOf('discord_activity=1') !== -1;
+
+        if (isDiscordActivity) {
+          document.documentElement.classList.add('discord-activity');
+        }
 
         try {
           var storedTheme = window.localStorage.getItem('dailied.themeMode');
@@ -39,6 +50,10 @@
     <style id="expo-reset">
       :root {
         --dailied-launch-background: #e9e1cf;
+        --dailied-safe-area-top: var(--discord-safe-area-inset-top, env(safe-area-inset-top, 0px));
+        --dailied-safe-area-right: var(--discord-safe-area-inset-right, env(safe-area-inset-right, 0px));
+        --dailied-safe-area-bottom: var(--discord-safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));
+        --dailied-safe-area-left: var(--discord-safe-area-inset-left, env(safe-area-inset-left, 0px));
       }
       /* These styles make the body full-height */
       html,
@@ -49,6 +64,13 @@
       /* These styles disable body scrolling if you are using <ScrollView> */
       body {
         overflow: hidden;
+      }
+      html.discord-activity body {
+        box-sizing: border-box;
+        padding-top: var(--dailied-safe-area-top);
+        padding-right: var(--dailied-safe-area-right);
+        padding-bottom: var(--dailied-safe-area-bottom);
+        padding-left: var(--dailied-safe-area-left);
       }
       /* These styles make the root element full-height */
       #root {
